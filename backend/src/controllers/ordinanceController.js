@@ -35,7 +35,7 @@ const getAllOrdinances = async (req, res) => {
     );
 
     const [rows] = await db.query(
-      `SELECT id, ordinance_number, title, description, date_passed,
+      `SELECT id, ordinance_number, title, description, full_text, date_passed,
               file_url, file_name, file_type, category, created_at
        FROM ordinances
        ${where}
