@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import LibraryPage from './pages/LibraryPage';
-import UploadPage from './pages/UploadPage';
 import OfficialsPage from './pages/OfficialsPage';
 
 export default function App() {
@@ -15,7 +14,6 @@ export default function App() {
           <Routes>
             <Route path="/"          element={<HomePage />}    />
             <Route path="/library"   element={<LibraryPage />} />
-            <Route path="/upload"    element={<UploadPage />}  />
             <Route path="/officials" element={<OfficialsPage />} />
             <Route path="*"          element={<NotFound />}    />
           </Routes>
