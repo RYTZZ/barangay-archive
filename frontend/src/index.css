@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base styles ─────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-gray-50 text-gray-800 font-sans antialiased;
+  }
+}
+
+/* ── Component helpers ───────────────────────────────────────────────────── */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-gov-navy text-white
+           px-6 py-2.5 rounded-lg font-semibold text-sm
+           hover:bg-gov-navy-dark active:scale-95
+           transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gov-navy/50;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-gov-gold text-white
+           px-6 py-2.5 rounded-lg font-semibold text-sm
+           hover:bg-gov-gold-dark active:scale-95
+           transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gov-gold/50;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-gov-navy text-gov-navy
+           px-6 py-2.5 rounded-lg font-semibold text-sm
+           hover:bg-gov-navy hover:text-white active:scale-95
+           transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gov-navy/30;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm hover:shadow-md
+           border border-gray-100 transition-shadow duration-300;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-gray-700 mb-1.5;
+  }
+
+  .form-input {
+    @apply w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm
+           bg-white placeholder-gray-400
+           focus:outline-none focus:ring-2 focus:ring-gov-navy/40 focus:border-gov-navy
+           transition-colors duration-200;
+  }
+
+  .form-textarea {
+    @apply form-input resize-y min-h-[100px];
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-serif font-bold text-gov-navy;
+  }
+
+  .page-hero {
+    @apply bg-gradient-to-r from-gov-navy-dark via-gov-navy to-gov-navy-light
+           text-white py-12 md:py-16;
+  }
+
+  .badge {
+    @apply inline-flex items-center text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+}
+
+/* ── Utilities ───────────────────────────────────────────────────────────── */
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

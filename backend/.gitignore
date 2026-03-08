@@ -1,0 +1,8 @@
+node_modules/
+.env
+gcs-keyfile.json
+*.key
+*.pem
+dist/
+logs/
+*.log
