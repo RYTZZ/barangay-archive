@@ -228,7 +228,7 @@ export default function HomePage() {
           </div>
           <div className="hp-hero-copy">
             <span className="hp-hero-eyebrow">
-              Republic of the Philippines â€” Official Digital Repository
+              Republic of the Philippines — Official Digital Repository
             </span>
             <h1 className="hp-hero-title">
               Welcome to the <span>Zone 2 Barangay</span>

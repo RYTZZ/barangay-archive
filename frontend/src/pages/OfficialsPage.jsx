@@ -7,9 +7,9 @@ const OFFICIALS = [
     positionCode: 'PB',
     positionLabel: 'Punong Barangay',
     firstName: 'Josias',
-    middleName: 'Lipata',
+    middleName: 'L.',
     lastName: 'Geraldino',
-    zone: 'Zone II Poblacion',
+    zone: 'Zone 2',
     barangay: 'Bgy. 2 – West Ilawod',
     termStart: 'May 14, 2018',
     termEnd: '2021',
@@ -17,12 +17,12 @@ const OFFICIALS = [
   },
   {
     id: 2,
-    positionCode: 'SBM 1',
-    positionLabel: 'Sangguniang Barangay Member',
+    positionCode: 'BK 1',
+    positionLabel: 'Barangay Kagawad',
     firstName: 'Joel',
-    middleName: 'Gipanao',
+    middleName: 'G.',
     lastName: 'Guañizo',
-    zone: 'Zone II Poblacion',
+    zone: 'Zone 2',
     barangay: 'Bgy. 2 – West Ilawod',
     termStart: 'May 14, 2018',
     termEnd: '2021',
@@ -30,12 +30,12 @@ const OFFICIALS = [
   },
   {
     id: 3,
-    positionCode: 'SBM 2',
-    positionLabel: 'Sangguniang Barangay Member',
-    firstName: 'Allan',
-    middleName: 'Pura',
-    lastName: 'Dellomas',
-    zone: 'Zone II Poblacion',
+    positionCode: 'BK 2',
+    positionLabel: 'Barangay Kagawad',
+    firstName: 'Jocelyn',
+    middleName: 'M.',
+    lastName: 'Guda',
+    zone: 'Zone 2',
     barangay: 'Bgy. 2 – West Ilawod',
     termStart: 'May 14, 2018',
     termEnd: '2021',
@@ -43,12 +43,12 @@ const OFFICIALS = [
   },
   {
     id: 4,
-    positionCode: 'SBM 3',
-    positionLabel: 'Sangguniang Barangay Member',
-    firstName: 'Arman',
-    middleName: 'Despabiladeras',
-    lastName: 'Guelas',
-    zone: 'Zone II Poblacion',
+    positionCode: 'BK 3',
+    positionLabel: 'Barangay Kagawad',
+    firstName: 'Charita',
+    middleName: 'D.',
+    lastName: 'Zaide',
+    zone: 'Zone 2',
     barangay: 'Bgy. 2 – West Ilawod',
     termStart: 'May 14, 2018',
     termEnd: '2021',
@@ -56,12 +56,12 @@ const OFFICIALS = [
   },
   {
     id: 5,
-    positionCode: 'SBM 4',
-    positionLabel: 'Sangguniang Barangay Member',
+    positionCode: 'BK 4',
+    positionLabel: 'Barangay Kagawad',
     firstName: 'Oscar',
-    middleName: 'Pura',
+    middleName: 'P.',
     lastName: 'Estopa',
-    zone: 'Zone II Poblacion',
+    zone: 'Zone 2',
     barangay: 'Bgy. 2 – West Ilawod',
     termStart: 'May 14, 2018',
     termEnd: '2021',
@@ -69,12 +69,12 @@ const OFFICIALS = [
   },
   {
     id: 6,
-    positionCode: 'SBM 5',
-    positionLabel: 'Sangguniang Barangay Member',
-    firstName: 'Rizalino',
-    middleName: 'Gernale',
-    lastName: 'Cañada',
-    zone: 'Zone II Poblacion',
+    positionCode: 'BK 5',
+    positionLabel: 'Barangay Kagawad',
+    firstName: 'Sandy',
+    middleName: 'P.',
+    lastName: 'Doringo',
+    zone: 'Zone 2',
     barangay: 'Bgy. 2 – West Ilawod',
     termStart: 'May 14, 2018',
     termEnd: '2021',
@@ -82,12 +82,12 @@ const OFFICIALS = [
   },
   {
     id: 7,
-    positionCode: 'SBM 6',
-    positionLabel: 'Sangguniang Barangay Member',
-    firstName: 'Jocelyn',
-    middleName: 'Mohametano',
-    lastName: 'Guda',
-    zone: 'Zone II Poblacion',
+    positionCode: 'BK 6',
+    positionLabel: 'Barangay Kagawad',
+    firstName: 'Rizalino',
+    middleName: 'G.',
+    lastName: 'Cañada',
+    zone: 'Zone 2',
     barangay: 'Bgy. 2 – West Ilawod',
     termStart: 'May 14, 2018',
     termEnd: '2021',
@@ -95,12 +95,12 @@ const OFFICIALS = [
   },
   {
     id: 8,
-    positionCode: 'SBM 7',
-    positionLabel: 'Sangguniang Barangay Member',
-    firstName: 'Sandy',
-    middleName: 'Perida',
-    lastName: 'Doringo',
-    zone: 'Zone II Poblacion',
+    positionCode: 'BK 7',
+    positionLabel: 'Barangay Kagawad',
+    firstName: 'Cyrel',
+    middleName: 'D.',
+    lastName: 'Gipa',
+    zone: 'Zone 2',
     barangay: 'Bgy. 2 – West Ilawod',
     termStart: 'May 14, 2018',
     termEnd: '2021',
@@ -276,7 +276,7 @@ function InfoRow({ icon, children }) {
 // â”€â”€ Main page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export default function OfficialsPage() {
   const [query,  setQuery]  = useState('');
-  const [filter, setFilter] = useState('All'); // 'All' | 'PB' | 'SBM'
+  const [filter, setFilter] = useState('All'); // 'All' | 'PB' | 'BK'
 
   // Derived filtered list
   const visible = OFFICIALS.filter((o) => {
@@ -290,14 +290,14 @@ export default function OfficialsPage() {
 
     const matchesFilter =
       filter === 'All' ||
-      (filter === 'PB'  && o.positionCode === 'PB') ||
-      (filter === 'SBM' && o.positionCode.startsWith('SBM'));
+      (filter === 'PB' && o.positionCode === 'PB') ||
+      (filter === 'BK' && o.positionCode.startsWith('BK'));
 
     return matchesQuery && matchesFilter;
   });
 
   const punong = visible.find((o) => o.positionCode === 'PB');
-  const sbms   = visible.filter((o) => o.positionCode.startsWith('SBM'));
+  const sbms   = visible.filter((o) => o.positionCode.startsWith('BK'));
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -306,7 +306,7 @@ export default function OfficialsPage() {
       <div className="page-hero">
         <div className="max-w-7xl mx-auto px-4">
           <p className="text-gov-gold text-xs font-semibold uppercase tracking-widest mb-2">
-            Republic of the Philippines â€” Elected & Appointed Officials
+            Republic of the Philippines — Elected & Appointed Officials
           </p>
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-white mb-1">
             Barangay Officials
@@ -340,7 +340,7 @@ export default function OfficialsPage() {
             </svg>
             <input
               type="text"
-              placeholder="Search by name or positionâ€¦"
+              placeholder="Search by name or position…"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="form-input pl-9 py-2 text-sm"
@@ -349,7 +349,7 @@ export default function OfficialsPage() {
 
           {/* Filter pills */}
           <div className="flex gap-2">
-            {['All', 'PB', 'SBM'].map((f) => (
+            {['All', 'PB', 'BK'].map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
@@ -360,7 +360,7 @@ export default function OfficialsPage() {
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
                 ].join(' ')}
               >
-                {f === 'All' ? 'All Officials' : f === 'PB' ? 'Punong Barangay' : 'SB Members'}
+                {f === 'All' ? 'All Officials' : f === 'PB' ? 'Punong Barangay' : 'Barangay Kagawad'}
               </button>
             ))}
           </div>
@@ -403,7 +403,7 @@ export default function OfficialsPage() {
             {/* â”€â”€ SB Members grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
             {sbms.length > 0 && (
               <section>
-                <SectionDivider label="Sangguniang Barangay Members" />
+                <SectionDivider label="Barangay Kagawad" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {sbms.map((o) => (
                     <OfficialCard
