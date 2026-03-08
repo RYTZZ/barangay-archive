@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const { requireAdmin, loginAdmin, logoutAdmin } = require('./middleware/auth');
+const adminRoutes = require('./routes/admin');
 // ── Session setup ───────────────────────────────────────────────────────────
 app.use(session({
   secret: process.env.SESSION_SECRET || 'zone2secret',
@@ -11,8 +12,7 @@ app.use(session({
 // ── Admin authentication routes ─────────────────────────────────────────────
 app.post('/api/admin/login', loginAdmin);
 app.post('/api/admin/logout', logoutAdmin);
-// ── Admin protected routes example ───────────────────────────────────────────
-app.use('/api/admin/ordinances', requireAdmin, require('./routes/ordinances'));
+app.use('/api/admin', adminRoutes);
 const cors = require('cors');
 const path = require('path');
 const https = require('https');

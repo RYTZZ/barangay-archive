@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <span class="logo">Barangay Archive Admin</span>
+    <button id="logoutBtn">Logout</button>
+  </nav>
+  <main>
+    <section class="stats">
+      <h2>Statistics</h2>
+      <div id="statsContainer">
+        <!-- Stats will be loaded here -->
+      </div>
+    </section>
+    <section class="crud">
+      <h2>Ordinances</h2>
+      <button id="addOrdinanceBtn">Add Ordinance</button>
+      <table id="ordinanceTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>File</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ordinances will be loaded here -->
+        </tbody>
+      </table>
+      <div id="ordinanceFormContainer" class="modal hidden">
+        <form id="ordinanceForm">
+          <h3 id="formTitle">Add Ordinance</h3>
+          <input type="hidden" name="id" id="ordinanceId">
+          <label>Title: <input type="text" name="title" id="ordinanceTitle" required></label>
+          <label>Date: <input type="date" name="date" id="ordinanceDate" required></label>
+          <label>File: <input type="file" name="file" id="ordinanceFile"></label>
+          <button type="submit">Save</button>
+          <button type="button" id="cancelBtn">Cancel</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="admin-script.js"></script>
+</body>
+</html>
