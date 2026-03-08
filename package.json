@@ -1,0 +1,12 @@
+{
+  "name": "barangay-archive",
+  "version": "1.0.0",
+  "description": "Monorepo root – Railway uses this to detect Node.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "npm install --prefix backend",
+    "start": "node backend/src/server.js"
+  }
+}
