@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Ordinance | Admin | Zone 2 Ordinance Repository</title>
+  <link rel="stylesheet" href="/public/dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h3>Admin Dashboard</h3>
+      <nav>
+        <ul>
+          <li><a href="/admin-dashboard.html">Dashboard</a></li>
+          <li><a href="/admin-upload.html">Upload New Ordinance</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="dashboard-header">
+        <h2>Upload New Ordinance</h2>
+      </header>
+      <form id="uploadOrdinanceForm" enctype="multipart/form-data">
+        <label for="ordinanceNumber">Ordinance Number</label>
+        <input type="text" id="ordinanceNumber" name="ordinanceNumber" required>
+        <label for="datePassed">Date Passed</label>
+        <input type="date" id="datePassed" name="datePassed" required>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+        <label for="category">Category</label>
+        <input type="text" id="category" name="category" required>
+        <label for="summary">Summary / Description</label>
+        <textarea id="summary" name="summary" required></textarea>
+        <label for="document">Upload Document (PDF, PNG, JPG)</label>
+        <input type="file" id="document" name="document" accept=".pdf,.png,.jpg,.jpeg" required>
+        <button type="submit">Upload Ordinance</button>
+        <div id="uploadError" class="error"></div>
+      </form>
+    </main>
+  </div>
+  <script src="/public/admin-upload.js"></script>
+</body>
+</html>

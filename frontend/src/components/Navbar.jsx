@@ -17,7 +17,6 @@ function BarangaySeal({ size = 48 }) {
 // ── Nav links config ──────────────────────────────────────────────────────────
 const NAV_LINKS = [
   { to: '/',          label: 'Home' },
-  { to: '/upload',    label: 'Upload Ordinance' },
   { to: '/library',   label: 'Ordinance Library' },
   { to: '/officials', label: 'Barangay Officials' },
 ];

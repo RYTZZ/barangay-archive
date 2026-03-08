@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Zone 2 Ordinance Repository</title>
+  <link rel="stylesheet" href="/public/dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h3>Admin Dashboard</h3>
+      <nav>
+        <ul>
+          <li><a href="/admin-dashboard.html">Dashboard</a></li>
+          <li><a href="/admin-upload.html">Upload New Ordinance</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="dashboard-header">
+        <h2>Ordinance Management</h2>
+        <button onclick="location.href='/admin-upload.html'">Upload New Ordinance</button>
+      </header>
+      <section id="ordinanceList">
+        <!-- Ordinance list will be rendered here -->
+      </section>
+    </main>
+  </div>
+  <script src="/public/admin-dashboard.js"></script>
+</body>
+</html>
