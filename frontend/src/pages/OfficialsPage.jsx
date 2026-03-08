@@ -305,6 +305,7 @@ export default function OfficialsPage() {
   });
 
   const punong = visible.find((o) => o.positionCode === 'PB');
+  const secretary = visible.find((o) => o.positionCode === 'SEC');
   const sbms   = visible.filter((o) => o.positionCode.startsWith('BK'));
 
   return (
@@ -393,7 +394,7 @@ export default function OfficialsPage() {
           </div>
         ) : (
           <>
-            {/* â”€â”€ Punong Barangay (featured, centred) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+            {/* â”€â”€ Punong Barangay (featured, centred) â”€â”€ */}
             {punong && (
               <section className="mb-12">
                 <SectionDivider label="Punong Barangay" />
@@ -402,6 +403,21 @@ export default function OfficialsPage() {
                     <OfficialCard
                       official={punong}
                       index={OFFICIALS.findIndex((o) => o.id === punong.id)}
+                    />
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* â”€â”€ Barangay Secretary (featured, centred) â”€â”€ */}
+            {secretary && (
+              <section className="mb-12">
+                <SectionDivider label="Barangay Secretary" />
+                <div className="flex justify-center">
+                  <div className="w-full max-w-[260px]">
+                    <OfficialCard
+                      official={secretary}
+                      index={OFFICIALS.findIndex((o) => o.id === secretary.id)}
                     />
                   </div>
                 </div>
