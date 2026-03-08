@@ -3,30 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard | Zone 2 Ordinance Repository</title>
-  <link rel="stylesheet" href="/public/dashboard.css">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin-style.css">
 </head>
 <body>
   <div class="dashboard-container">
     <aside class="sidebar">
-      <h3>Admin Dashboard</h3>
-      <nav>
-        <ul>
-          <li><a href="/admin-dashboard.html">Dashboard</a></li>
-          <li><a href="/admin-upload.html">Upload New Ordinance</a></li>
-        </ul>
-      </nav>
+      <div class="sidebar-header">
+        <span class="logo">Barangay Archive Admin</span>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="#" class="active">Dashboard</a></li>
+        <li><a href="admin-upload.html">Upload</a></li>
+        <li><a href="admin-login.html">Logout</a></li>
+      </ul>
     </aside>
-    <main class="main-content">
-      <header class="dashboard-header">
-        <h2>Ordinance Management</h2>
-        <button onclick="location.href='/admin-upload.html'">Upload New Ordinance</button>
-      </header>
-      <section id="ordinanceList">
-        <!-- Ordinance list will be rendered here -->
+    <main class="dashboard-main">
+      <section class="stats">
+        <h2>Statistics</h2>
+        <div class="stats-cards" id="statsContainer">
+          <!-- Stats will be loaded here as cards -->
+        </div>
+      </section>
+      <section class="crud">
+        <div class="crud-header">
+          <h2>Ordinances</h2>
+          <button id="addOrdinanceBtn">Add Ordinance</button>
+        </div>
+        <div class="table-responsive">
+          <table id="ordinanceTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>File</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Ordinances will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+        <div id="ordinanceFormContainer" class="modal hidden">
+          <form id="ordinanceForm">
+            <h3 id="formTitle">Add Ordinance</h3>
+            <input type="hidden" name="id" id="ordinanceId">
+            <label>Title: <input type="text" name="title" id="ordinanceTitle" required></label>
+            <label>Date: <input type="date" name="date" id="ordinanceDate" required></label>
+            <label>File: <input type="file" name="file" id="ordinanceFile"></label>
+            <div class="form-actions">
+              <button type="submit">Save</button>
+              <button type="button" id="cancelBtn">Cancel</button>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
   </div>
-  <script src="/public/admin-dashboard.js"></script>
+  <script src="admin-script.js"></script>
+  <script src="admin-script.js"></script>
 </body>
 </html>
