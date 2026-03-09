@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			e.preventDefault();
 			const formData = new FormData(uploadForm);
 			try {
-				const res = await fetch('https://barangay-archive-production.up.railway.app/api/admin/ordinances', {
+				const res = await fetch('/api/admin/ordinances', {
 					method: 'POST',
 					body: formData,
 					credentials: 'include'
@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (data.success) {
 					alert('Ordinance uploaded successfully!');
 					uploadForm.reset();
+					if (typeof loadOrdinances === 'function') loadOrdinances();
 				} else {
 					alert(data.message || 'Upload failed.');
 				}
