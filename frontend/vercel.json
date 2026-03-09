@@ -1,4 +1,4 @@
 {
 	"public": true,
-	"outputDirectory": "public"
+	"outputDirectory": "dist"
 }
