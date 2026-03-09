@@ -4,37 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="admin-style.css">
 </head>
 <body>
   <div class="dashboard-container">
     <aside class="sidebar">
       <div class="sidebar-header">
-        <span class="logo">Barangay Archive Admin</span>
+        <div class="logo-wrapper">
+          <i class="fas fa-archive"></i>
+          <span class="logo">Archive Admin</span>
+        </div>
       </div>
       <ul class="sidebar-menu">
-        <li><a href="#" class="active">Dashboard</a></li>
-        <li><a href="admin-upload.html">Upload</a></li>
-        <li><a href="admin-login.html">Logout</a></li>
+        <li>
+          <a href="#" class="active">
+            <i class="fas fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-upload.html">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span>Upload</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-login.html">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+        </li>
       </ul>
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">A</div>
+          <span>Admin User</span>
+        </div>
+      </div>
     </aside>
+
     <main class="dashboard-main">
-      <section class="stats">
-        <h2>Statistics</h2>
+      <!-- Header -->
+      <header class="dashboard-header">
+        <div class="header-content">
+          <h1>Dashboard</h1>
+          <p class="subtitle">Welcome back! Here's an overview of your ordinances.</p>
+        </div>
+        <div class="header-actions">
+          <button id="addOrdinanceBtn" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add Ordinance
+          </button>
+        </div>
+      </header>
+
+      <!-- Statistics Section -->
+      <section class="stats-section">
         <div class="stats-cards" id="statsContainer">
           <!-- Stats will be loaded here as cards -->
         </div>
       </section>
-      <section class="crud">
-        <div class="crud-header">
+
+      <!-- Ordinances Table Section -->
+      <section class="crud-section">
+        <div class="section-header">
           <h2>Ordinances</h2>
-          <button id="addOrdinanceBtn">Add Ordinance</button>
+          <p class="section-subtitle">Manage and view all ordinances</p>
         </div>
         <div class="table-responsive">
-          <table id="ordinanceTable">
+          <table id="ordinanceTable" class="data-table">
             <thead>
               <tr>
-                <th>ID</th>
+                <th>
+                  <input type="checkbox" class="select-all-checkbox">
+                </th>
                 <th>Title</th>
                 <th>Date</th>
                 <th>File</th>
@@ -46,23 +89,52 @@
             </tbody>
           </table>
         </div>
-        <div id="ordinanceFormContainer" class="modal hidden">
-          <form id="ordinanceForm">
+      </section>
+
+      <!-- Modal -->
+      <div id="ordinanceFormContainer" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+          <div class="modal-header">
             <h3 id="formTitle">Add Ordinance</h3>
+            <button type="button" id="closeModalBtn" class="close-btn">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <form id="ordinanceForm">
             <input type="hidden" name="id" id="ordinanceId">
-            <label>Title: <input type="text" name="title" id="ordinanceTitle" required></label>
-            <label>Date: <input type="date" name="date" id="ordinanceDate" required></label>
-            <label>File: <input type="file" name="file" id="ordinanceFile"></label>
+            
+            <div class="form-group">
+              <label for="ordinanceTitle">Title</label>
+              <input type="text" name="title" id="ordinanceTitle" placeholder="Enter ordinance title" required>
+            </div>
+
+            <div class="form-group">
+              <label for="ordinanceDate">Date</label>
+              <input type="date" name="date" id="ordinanceDate" required>
+            </div>
+
+            <div class="form-group">
+              <label for="ordinanceFile">Upload File</label>
+              <div class="file-upload">
+                <input type="file" name="file" id="ordinanceFile" class="file-input">
+                <div class="file-upload-label">
+                  <i class="fas fa-upload"></i>
+                  <span>Click to upload or drag and drop</span>
+                  <small>PDF, DOC up to 10MB</small>
+                </div>
+              </div>
+            </div>
+
             <div class="form-actions">
-              <button type="submit">Save</button>
-              <button type="button" id="cancelBtn">Cancel</button>
+              <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save Ordinance</button>
             </div>
           </form>
         </div>
-      </section>
+      </div>
     </main>
   </div>
-  <script src="admin-script.js"></script>
   <script src="admin-script.js"></script>
 </body>
 </html>

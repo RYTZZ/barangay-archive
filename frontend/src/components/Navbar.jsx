@@ -80,6 +80,13 @@ export default function Navbar() {
                   {link.label}
                 </NavLink>
               ))}
+              {/* Login Button */}
+              <a
+                href="/admin-login.html"
+                className="ml-2 px-4 py-2 rounded-lg text-sm font-medium text-white bg-gov-gold hover:bg-yellow-500 transition-all duration-200"
+              >
+                Log In
+              </a>
             </div>
 
             {/* Mobile hamburger */}
@@ -122,6 +129,14 @@ export default function Navbar() {
                   {link.label}
                 </NavLink>
               ))}
+              {/* Mobile Login Button */}
+              <a
+                href="/admin-login.html"
+                className="block px-4 py-2.5 rounded-lg text-sm font-medium text-white bg-gov-gold hover:bg-yellow-500 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Log In
+              </a>
             </div>
           )}
         </div>
