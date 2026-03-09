@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Login form handler for admin-login.html
+  const loginForm = document.getElementById('adminLoginForm');
+  if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const loginError = document.getElementById('loginError');
+      try {
+        const res = await fetch('/admin/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          window.location.href = '/admin-dashboard.html';
+        } else {
+          loginError.textContent = data.message || 'Invalid credentials';
+        }
+      } catch (err) {
+        loginError.textContent = 'Server error. Please try again.';
+      }
+    });
+  }
   // Elements
   const statsContainer = document.getElementById('statsContainer');
   const ordinanceTable = document.getElementById('ordinanceTable').querySelector('tbody');
