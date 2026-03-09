@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="admin-style.css">
+  <script>
+    if (localStorage.getItem('adminAuth') !== 'true') {
+      window.location.href = 'admin-login.html';
+    }
+  </script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-wrapper">
+          <i class="fas fa-archive"></i>
+          <span class="logo">Archive Admin</span>
+        </div>
+      </div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#" class="active">
+            <i class="fas fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-upload.html">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span>Upload</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-login.html">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">A</div>
+          <span>Admin User</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <!-- Header -->
+      <header class="dashboard-header">
+        <div class="header-content">
+          <h1>Dashboard</h1>
+          <p class="subtitle">Welcome back! Here's an overview of your ordinances.</p>
+        </div>
+        <div class="header-actions">
+          <button id="addOrdinanceBtn" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add Ordinance
+          </button>
+        </div>
+      </header>
+
+      <!-- Statistics Section -->
+      <section class="stats-section">
+        <div class="stats-cards" id="statsContainer">
+          <!-- Stats will be loaded here as cards -->
+        </div>
+      </section>
+
+      <!-- Ordinances Table Section -->
+      <section class="crud-section">
+        <div class="section-header">
+          <h2>Ordinances</h2>
+          <p class="section-subtitle">Manage and view all ordinances</p>
+        </div>
+        <div class="table-responsive">
+          <table id="ordinanceTable" class="data-table">
+            <thead>
+              <tr>
+                <th>
+                  <input type="checkbox" class="select-all-checkbox">
+                </th>
