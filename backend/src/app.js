@@ -2,6 +2,15 @@ const express = require('express');
 const session = require('express-session');
 const { requireAdmin, loginAdmin, logoutAdmin } = require('./middleware/auth');
 const adminRoutes = require('./routes/admin');
+const cors = require('cors');
+const path = require('path');
+const https = require('https');
+const http = require('http');
+const ordinanceRoutes = require('./routes/ordinances');
+const officialsRoutes = require('./routes/officials');
+
+const app = express();
+
 // ── Session setup ───────────────────────────────────────────────────────────
 app.use(session({
   secret: process.env.SESSION_SECRET || 'zone2secret',
@@ -9,19 +18,11 @@ app.use(session({
   saveUninitialized: false,
   cookie: { httpOnly: true, secure: false, maxAge: 86400000 },
 }));
+
 // ── Admin authentication routes ─────────────────────────────────────────────
 app.post('/api/admin/login', loginAdmin);
 app.post('/api/admin/logout', logoutAdmin);
 app.use('/api/admin', adminRoutes);
-const cors = require('cors');
-const path = require('path');
-const https = require('https');
-const http = require('http');
-
-const ordinanceRoutes = require('./routes/ordinances');
-const officialsRoutes = require('./routes/officials');
-
-const app = express();
 
 // ── CORS ─────────────────────────────────────────────────────────────────────
 // FRONTEND_URL can be a comma-separated list of allowed origins
