@@ -18,6 +18,19 @@
       <div id="loginError" class="error"></div>
     </form>
   </div>
-  <script src="admin-script.js"></script>
+  <script>
+    document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const loginError = document.getElementById('loginError');
+      if (username === 'admin' && password === 'password') {
+        localStorage.setItem('adminAuth', 'true');
+        window.location.href = 'admin-dashboard.html';
+      } else {
+        loginError.textContent = 'Invalid credentials. Please try again.';
+      }
+    });
+  </script>
 </body>
 </html>
