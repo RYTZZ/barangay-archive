@@ -36,6 +36,38 @@ document.addEventListener('DOMContentLoaded', () => {
 	const cancelBtn = document.getElementById('cancelBtn');
 	const logoutBtn = document.getElementById('logoutBtn');
 
+	// Ordinance upload form handler for admin-upload.html
+	const uploadForm = document.getElementById('ordinanceUploadForm');
+	if (uploadForm) {
+		uploadForm.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const formData = new FormData(uploadForm);
+			try {
+				const res = await fetch('https://barangay-archive-production.up.railway.app/api/admin/ordinances', {
+					method: 'POST',
+					body: formData,
+					credentials: 'include'
+				});
+				const data = await res.json();
+				if (data.success) {
+					alert('Ordinance uploaded successfully!');
+					uploadForm.reset();
+				} else {
+					alert(data.message || 'Upload failed.');
+				}
+			} catch (err) {
+				alert('Server error. Please try again.');
+			}
+		});
+		// Cancel button handler
+		const cancelBtn = document.getElementById('cancelUpload');
+		if (cancelBtn) {
+			cancelBtn.addEventListener('click', () => {
+				uploadForm.reset();
+			});
+		}
+	}
+
 	// State
 	let editingId = null;
 
